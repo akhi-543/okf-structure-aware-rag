@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Retrieval Bench — structured vs flat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/okf-web-bench-static/okf_web_bench_console.css">
+</head>
+<body>
+
+<aside class="rail">
+  <div class="rail-head"><div class="mark">Retrieval Bench <span>/ OKF</span></div></div>
+  <button type="button" class="new-run" id="newRun">New comparison</button>
+  <div class="rail-label">Sessions</div>
+  <ul class="runs" id="runs"></ul>
+</aside>
+
+<main class="main">
+  <nav class="tabs" aria-label="Console views">
+    <button type="button" class="on" id="tabCompare">Compare</button>
+    <button type="button" id="tabCorpus">Corpus map</button>
+  </nav>
+
+  <div class="panel" id="panelCompare">
+    <div class="config">
+      <div class="field">
+        <label for="corpus">Corpus</label>
+        <select id="corpus">
+          <option value="synthetic_retail_pilot">Brightmart operations wiki (synthetic_retail_pilot)</option>
+        </select>
+      </div>
+      <div class="field">
+        <span class="lane-dot dot-a"></span>
+        <label for="modeA">Lane A</label>
+        <select id="modeA">
+          <option value="flat" selected>Flat retrieval</option>
+          <option value="structured">Structured retrieval</option>
+        </select>
+      </div>
+      <div class="field">
+        <span class="lane-dot dot-b"></span>
+        <label for="modeB">Lane B</label>
+        <select id="modeB">
+          <option value="flat">Flat retrieval</option>
+          <option value="structured" selected>Structured retrieval</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="topk">Top-k</label>
+        <input type="number" id="topk" value="10" min="1" max="50">
+      </div>
+      <div class="field">
+        <label for="encoder">Encoder</label>
+        <select id="encoder">
+          <option value="bge" selected>BGE bge-base-en-v1.5 (locked)</option>
+          <option value="qwen3-emb" disabled>Qwen3-Embedding-0.6B (later — own index)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="generator">Generator</label>
+        <select id="generator">
+          <option value="qwen3" selected>Qwen/Qwen3-0.6B</option>
+          <option value="add" disabled>Add model…</option>
+        </select>
+      </div>
+      <div class="gpu" id="gpu" data-on="false">
+        <button type="button" class="switch" id="gpuSwitch" role="switch" aria-checked="false" aria-label="GPU acceleration"></button>
+        <span>GPU</span><span class="state" id="gpuState">off · cpu</span>
+      </div>
+      <div class="spacer"></div>
+      <button type="button" class="ghost" id="downloadBtn">Download JSON</button>
+    </div>
+
+    <div class="stream" id="stream">
+      <div class="wrap" id="trials">
+        <div class="empty" id="empty">
+          <h1>Ask once, answer twice.</h1>
+          <p>Every question runs through both retrieval paths with the same generator, so the only variable is how the context was found. Pick a starter below or write your own.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="composer">
+      <div class="wrap">
+        <div class="templates" id="templates"></div>
+        <div class="entry">
+          <textarea id="q" rows="1" placeholder="Ask a question about the Brightmart operations wiki…"></textarea>
+          <button type="button" class="run" id="runBtn">Run both</button>
+        </div>
+        <div class="hint" id="hint">enter to run · shift+enter for newline</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" id="panelCorpus" hidden>
+    <div class="config">
+      <div class="field">
+        <label for="corpusMap">Corpus</label>
+        <select id="corpusMap">
+          <option value="synthetic_retail_pilot">Brightmart operations wiki (synthetic_retail_pilot)</option>
+        </select>
+      </div>
+    </div>
+    <div class="corpus-wrap">
+      <div class="doc-list" id="docList">
+        <div class="empty-detail">Select a corpus to list documents.</div>
+      </div>
+      <div class="corpus-detail" id="corpusDetail">
+        <div class="empty-detail">Select a document to compare flat vs struct chunks.</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="/okf-web-bench-static/okf_web_bench_console.js"></script>
+</body>
+</html>

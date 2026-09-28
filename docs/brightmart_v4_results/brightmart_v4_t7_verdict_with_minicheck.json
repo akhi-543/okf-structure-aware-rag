@@ -1,0 +1,53 @@
+{
+  "threshold_hhem": 0.5,
+  "S34_correct_F1": {
+    "delta": 0.14558402459546924,
+    "ci_low": 0.07356626703643637,
+    "ci_high": 0.2186821570813316,
+    "p": 0.0,
+    "n": 80,
+    "R0_mean": 0.5177166203651347,
+    "R2s_mean": 0.6633006449606038
+  },
+  "S34_faithful": {
+    "delta": -0.1,
+    "ci_low": -0.2125,
+    "ci_high": 0.0125,
+    "p": 0.1158,
+    "n": 80,
+    "R0_mean": 0.8625,
+    "R2s_mean": 0.7625
+  },
+  "S12_correct": {
+    "delta": -0.075,
+    "ci_low": -0.2,
+    "ci_high": 0.05,
+    "p": 0.2582,
+    "n": 80,
+    "R0_mean": 0.8,
+    "R2s_mean": 0.725
+  },
+  "S5_abstention": {
+    "delta": 0.025,
+    "ci_low": -0.05,
+    "ci_high": 0.1,
+    "p": 0.7834,
+    "n": 40,
+    "R0_mean": 0.875,
+    "R2s_mean": 0.9
+  },
+  "pass": false,
+  "secondary_minicheck_S34": {
+    "delta": -0.1,
+    "ci_low": -0.2375,
+    "ci_high": 0.0375,
+    "p": 0.1628,
+    "n": 80,
+    "R0_mean": 0.65,
+    "R2s_mean": 0.55
+  },
+  "context_tokens_mean": {
+    "R0": 1559.53,
+    "R2s": 1788.095
+  }
+}

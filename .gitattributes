@@ -1,0 +1,5 @@
+# Force LF everywhere: the corpus validator compares rendered bytes with the
+# files on disk, so a CRLF checkout (core.autocrlf=true on Windows) would fail it.
+* text=auto eol=lf
+*.parquet binary
+*.sqlite binary

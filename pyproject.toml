@@ -1,0 +1,20 @@
+[project]
+name = "okf_final"
+version = "0.1.0"
+authors = [{ name = "Akhilesh Teja Goli" }]
+requires-python = ">=3.12"
+dependencies = ["pyyaml>=6.0", "pyarrow>=17.0", "numpy>=1.26"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+db = ["psycopg[binary]>=3.2", "pgvector>=0.3"]
+ml = ["torch>=2.1", "sentence-transformers>=3.0", "transformers>=4.40", "huggingface_hub>=0.24"]
+web = ["fastapi>=0.115", "pydantic>=2.0", "uvicorn>=0.30", "httpx>=0.27"]
+
+[tool.setuptools.packages.find]
+include = ["okf_rag*", "okf_web_bench*"]
+
+[tool.pytest.ini_options]
+markers = ["integration: needs docker/network/models"]
+addopts = "-m 'not integration'"
+pythonpath = ["."]

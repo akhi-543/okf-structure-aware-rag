@@ -1,0 +1,139 @@
+# Pinned model checkpoints, one entry per role (spec §16; arch §10 Global
+# Constraint). Roles that call the same checkpoint still get separate
+# entries: repointing the answer generator must not silently invalidate the
+# frozen benchmark wording or the extracted graph baseline, and a diff on
+# one role's entry must never touch another's.
+#
+# `revision: UNRESOLVED` ships here on purpose -- a real checkpoint SHA
+# cannot be resolved offline, and this file is written before that step
+# runs. `revision: UNRESOLVED` is not a usable pin: `okf_rag.jobs.model_lock
+# .model_pin` refuses it at the use site. `load_model_pins` does not raise
+# on it, so the whole file stays inspectable (e.g. to check every role is
+# present) before any revision is resolved.
+#
+# To pin a role: run `scripts/resolve_model_revisions.py` (created in a
+# later phase) to resolve the live commit SHA for its `model_id`, write
+# that SHA into `revision` here, and commit the change. Never edit a role's
+# `model_id` or `generation` block in the same commit that resolves its
+# revision -- that conflates "which checkpoint" with "which commit of it".
+#
+# Every model output that feeds a benchmark metric is generated greedily
+# (`do_sample: false`) and must be logged with its role's model_id and
+# revision. `load_model_pins` raises on a generative role whose lock entry
+# sets `do_sample: true`: a metric produced by a sampling decode is not
+# reproducible from this file.
+
+benchmark_wording:
+  model_id: Qwen/Qwen3-4B-Instruct-2507
+  revision: cdbee75f17c01a7cc42f958dc650907174af0554
+  dtype: float16
+  max_new_tokens: 96
+  generation:
+    do_sample: false
+    num_beams: 1
+  role_note: >
+    Writes the natural-language question for each fact candidate. Kept
+    separate from graph_extraction and answer_generator, which share this
+    same model_id, because the three are versioned independently: freezing
+    the benchmark wording must survive a later change to how the answer
+    generator or graph extractor is pinned.
+
+graph_extraction:
+  model_id: Qwen/Qwen3-4B-Instruct-2507
+  revision: cdbee75f17c01a7cc42f958dc650907174af0554
+  dtype: float16
+  max_new_tokens: 512
+  generation:
+    do_sample: false
+    num_beams: 1
+  role_note: >
+    Extracts the structural graph baseline from authored text. Kept
+    separate from benchmark_wording and answer_generator, which share this
+    same model_id, because the three are versioned independently: the
+    extracted graph baseline must not be silently invalidated by a change
+    to either of the other two roles' pins.
+
+answer_generator:
+  model_id: Qwen/Qwen3-4B-Instruct-2507
+  revision: cdbee75f17c01a7cc42f958dc650907174af0554
+  dtype: float16
+  max_new_tokens: 256
+  generation:
+    do_sample: false
+    num_beams: 1
+  role_note: >
+    Generates the answer under test for each benchmark question, for both
+    the structure-aware and flat-RAG conditions. Kept separate from
+    benchmark_wording and graph_extraction, which share this same
+    model_id, because the three are versioned independently: repointing
+    the answer generator must not silently invalidate the frozen benchmark
+    or the extracted graph baseline.
+
+benchmark_filter:
+  model_id: bespokelabs/Bespoke-MiniCheck-7B
+  revision: 1ed7786bcda3fa1dc35f7c4ed9e3f36b785d33b8
+  dtype: float16
+  max_new_tokens: null
+  generation: null
+  role_note: >
+    Judges whether a worded question is still supported by its source
+    claim, filtering out candidates the wording step broke. Not
+    generative in the do_sample sense -- it scores an entailment label,
+    so it carries no generation block.
+
+faithfulness_judge:
+  model_id: vectara/hallucination_evaluation_model
+  revision: 8e4a2e6e96c708cc76c2344f7e4757df2515292c
+  dtype: float32
+  max_new_tokens: null
+  generation: null
+  role_note: >
+    Scores whether a generated answer is faithful to its retrieved
+    context. A classifier, not a text generator, so it carries no
+    generation block.
+
+embedding:
+  model_id: BAAI/bge-base-en-v1.5
+  revision: a5beb1e3e68b9ab74eb54cfd186867f64f240e1a
+  dtype: float32
+  max_new_tokens: null
+  generation: null
+  role_note: >
+    Produces the dense chunk vectors both retrieval conditions search
+    over. Not generative, so it carries no generation block.
+
+reranker:
+  model_id: BAAI/bge-reranker-base
+  revision: 2cfc18c9415c912f9d8155881c133215df768a70
+  dtype: float32
+  max_new_tokens: null
+  generation: null
+  role_note: >
+    Reorders first-stage retrieval results by query-chunk relevance. Not
+    generative, so it carries no generation block.
+
+query_filter:
+  model_id: Qwen/Qwen3-4B-Instruct-2507
+  revision: cdbee75f17c01a7cc42f958dc650907174af0554
+  dtype: float16
+  max_new_tokens: 160
+  generation:
+    do_sample: false
+    num_beams: 1
+  role_note: >
+    Brightmart v4 (T3, exploratory R6l): turns a list question into a JSON
+    metadata filter. Kept separate from the other Qwen3-4B roles so the
+    filter prompt's model can be repointed without touching the answer
+    generator or the extracted graph.
+
+faithfulness_judge_minicheck:
+  model_id: bespokelabs/Bespoke-MiniCheck-7B
+  revision: 1ed7786bcda3fa1dc35f7c4ed9e3f36b785d33b8
+  dtype: float16
+  max_new_tokens: null
+  generation: null
+  role_note: >
+    Brightmart v4 (T7): secondary answer-faithfulness judge (document,
+    claim sentence) -> support probability, next to HHEM-2.1. Same
+    checkpoint as benchmark_filter, versioned separately because it judges
+    generated answers rather than benchmark wording.

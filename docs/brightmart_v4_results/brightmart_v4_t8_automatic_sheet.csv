@@ -1,0 +1,310 @@
+query_id,stratum,question,gold_answer,gold_docs,answer_R0,answer_R2s,gold_ok,R0_correct,R2s_correct,notes
+bm4-h-s1-01-t,S1,What is the floor area of Brightmart Bayview in square feet?,"188,500 square feet",regions/mid-atlantic/store-s015-bayview.md,"The floor area of Brightmart Bayview is 188,500 square feet [3].","The floor area of Brightmart Bayview is 161,500 square feet [2].",y,y,n,"automatic T7 scoring, binarized"
+bm4-h-s1-04-t,S1,What is the floor area of Brightmart Saguaro Point in square feet?,"56,000 square feet",regions/southwest/store-s063-saguaro-point.md,"The floor area of Brightmart Saguaro Point is 56,000 square feet [2].","The floor area of Brightmart Saguaro Point is 56,000 square feet [3].",y,y,y,"automatic T7 scoring, binarized"
+bm4-h-s1-10-t,S1,What year was Brightmart Red River established?,2003,regions/great-plains/store-s051-red-river.md,Brightmart Red River was established in 2003 [1].,Brightmart Red River was established in 2003 [2][3].,y,y,y,"automatic T7 scoring, binarized"
+bm4-h-s1-18-t,S1,Who is the Wellness department manager at Brightmart Cedar Park?,Bob Lewis,regions/mountain/store-s073-cedar-park.md,The Wellness department manager at Brightmart Cedar Park is Bob Lewis [1].,NOT FOUND,y,y,n,"automatic T7 scoring, binarized"
+bm4-h-s1-24-t,S1,How much revenue did the Deli department at Brightmart Sooner Plaza report for Q2 2025?,"35,891.60",sales/sales-s052-sooner-plaza-2025.md,"The Deli department at Brightmart Sooner Plaza reported $35,891.60 in revenue for Q2 2025 [1].","The Deli department at Brightmart Sooner Plaza reported $35,891.60 in revenue for Q2 2025 [1].",y,y,y,"automatic T7 scoring, binarized"
+bm4-h-s1-28-t,S1,What percentage discount comes with the Tech Upgrade Days promotion?,18%,promotions/promo-tech-upgrade-days.md,The percentage discount that comes with the Tech Upgrade Days promotion is 18% off [1].,The Tech Upgrade Days promotion offers an 18% discount [1].,y,y,y,"automatic T7 scoring, binarized"
+bm4-h-s1-35-t,S1,What are the Sunday pharmacy hours under the Pharmacy Hours Policy?,10:00-18:00,policies/policy-pharmacy-hours-policy.md,The Sunday pharmacy hours under the Pharmacy Hours Policy are 10:00-18:00 [1].,The Sunday pharmacy hours under the Pharmacy Hours Policy are 10:00–18:00 [1].,y,y,y,"automatic T7 scoring, binarized"
+bm4-h-s1-36-t,S1,What deposit does the Layaway Policy require?,10%,policies/policy-layaway-policy.md,The Layaway Policy requires a 10% deposit. [1] and [2] both state that the Layaway Policy requires a deposit of 10% of the purchase price.,"The Layaway Policy requires a deposit of 10% of the purchase price [1]. This is consistently stated in both [1] and [2], which describe the layaway policy and the required deposit. 
+
+Answer: 10% of the purchase price. [1]",y,y,y,"automatic T7 scoring, binarized"
+bm4-h-s2-04-t,S2,Where is the company that supplies Kids Apparel headquartered?,Portugal,departments/apparel/category-kids-apparel.md | suppliers/supplier-alder-finch-textiles.md,"The company that supplies Kids Apparel is Alder & Finch Textiles, which is headquartered in Portugal [4].","The company that supplies Kids Apparel is Alder & Finch Textiles, as stated in [1]. However, the documentation does not specify the headquarters location of Alder & Finch Textiles. Therefore, the location of the company's headquarters is NOT FOUND.",y,y,n,"automatic T7 scoring, binarized"
+bm4-h-s2-16-t,S2,Which regional manager oversees Brightmart Cedar Falls?,Priya Halvorsen,regions/midwest/store-s037-cedar-falls.md | regions/region-midwest.md,"Brightmart Cedar Falls is located in the Midwest region, which is led by Priya Halvorsen [2]. Therefore, Priya Halvorsen oversees Brightmart Cedar Falls.
+
+Answer: Priya Halvorsen [2]",NOT FOUND,y,y,n,"automatic T7 scoring, binarized"
+bm4-h-s2-22-t,S2,What group is the department carrying Coffee Beans part of?,food,departments/beverages/category-coffee-beans.md | departments/dept-beverages.md,"The department carrying Coffee Beans is part of the Beverages department [1]. This is supported by the documentation stating, ""Coffee Beans This category is part of the Beverages department"" [1] and further confirmed in the Beverages department page which lists Coffee Beans as one of its categories [7]. 
+
+Answer: Beverages department. [1] [7]","The department carrying Coffee Beans is part of the Beverages department, which is part of the food group [6]. Therefore, the group is the food group. [6]",y,n,y,"automatic T7 scoring, binarized"
+bm4-h-s2-23-t,S2,What group is the department carrying Breakfast Cereal part of?,food,departments/grocery/category-breakfast-cereal.md | departments/dept-grocery.md,"The Breakfast Cereal category is part of the Grocery department, which belongs to the food group [3]. 
+
+Answer: food group [3]","The Breakfast Cereal category is part of the Grocery department, which belongs to the food group [1]. Therefore, the group is the food group [9]. 
+
+Answer: food group [9]",y,y,y,"automatic T7 scoring, binarized"
+bm4-h-s2-29-t,S2,What group is the department carrying Specialty Cheese part of?,food,departments/deli/category-specialty-cheese.md | departments/dept-deli.md,"The department carrying Specialty Cheese is part of the Deli department, which belongs to the food group [1][9]. 
+
+Answer: food group.","The Specialty Cheese category is part of the Deli department, which belongs to the food group [1][7]. Therefore, the group is the food group. 
+
+Answer: food group [1][7]",y,y,y,"automatic T7 scoring, binarized"
+bm4-h-s2-35-t,S2,The Summer Sip promotion belongs to a department in which group?,food,promotions/promo-summer-sip.md | departments/dept-beverages.md,The Summer Sip promotion belongs to the Beverages department [1].,"The Summer Sip promotion belongs to the Beverages department, which is part of the food group [1][7]. 
+
+Answer: food group.",y,n,y,"automatic T7 scoring, binarized"
+bm4-h-s2-39-t,S2,The Tech Upgrade Days promotion belongs to a department in which group?,general,promotions/promo-tech-upgrade-days.md | departments/dept-electronics.md,The Tech Upgrade Days promotion belongs to the Electronics department [1].,The Tech Upgrade Days promotion belongs to the Electronics department [1].,y,n,n,"automatic T7 scoring, binarized"
+bm4-h-s2-40-t,S2,The Harvest Market promotion belongs to a department in which group?,food,promotions/promo-harvest-market.md | departments/dept-grocery.md,The Harvest Market promotion belongs to the Grocery department [1].,"The Harvest Market promotion belongs to the Grocery department, which is part of the food group [10]. 
+
+Answer: food group [10]",y,n,y,"automatic T7 scoring, binarized"
+bm4-h-s3-03-t,S3,Which express stores operate a fuel station?,"Brightmart Blue Ridge, Brightmart Shore Point, Brightmart Fox River, Brightmart Sunflower Commons, Brightmart Desert Bloom, Brightmart Painted Sky, Brightmart Redwood Crossing, Brightmart Orchard Hill",regions/mid-atlantic/store-s017-blue-ridge.md | regions/mid-atlantic/store-s019-shore-point.md | regions/midwest/store-s047-fox-river.md | regions/great-plains/store-s054-sunflower-commons.md | regions/southwest/store-s061-desert-bloom.md | regions/southwest/store-s069-painted-sky.md | regions/pacific/store-s087-redwood-crossing.md | regions/pacific/store-s096-orchard-hill.md,"Brightmart Fox River operates a fuel station [7]. Brightmart Shore Point offers fuel services at the pumps [6]. Therefore, the express stores that operate a fuel station are Brightmart Fox River and Brightmart Shore Point. 
+
+Answer: Brightmart Fox River and Brightmart Shore Point [7][6].",Brightmart Fox River operates a fuel station [10].,y,n,n,"automatic T7 scoring, binarized"
+bm4-h-s3-06-t,S3,Which Northeast locations offer fuel?,"Brightmart Riverdale, Brightmart Maple Crossing, Brightmart Seaside Commons, Brightmart Elm Terrace, Brightmart Kingsbury",regions/northeast/store-s002-riverdale.md | regions/northeast/store-s006-maple-crossing.md | regions/northeast/store-s007-seaside-commons.md | regions/northeast/store-s009-elm-terrace.md | regions/northeast/store-s012-kingsbury.md,NOT FOUND,"The Northeast locations that offer fuel are:
+
+- Brightmart Seaside Commons in Providence, RI [6]: ""Customers can fill up at the fuel station.""  
+- Brightmart Riverdale in Albany, NY [10]: ""Fuel services are available at the pumps.""  
+
+These are the only locations mentioned as having fuel services.  
+
+Answer: Providence, RI and Albany, NY. [6][10]",y,n,n,"automatic T7 scoring, binarized"
+bm4-h-s3-14-t,S3,Which promotions are available at neighborhood stores?,"Spring Garden Days, Fresh Friday, Winter Care, Holiday Bake Fest, Summer Sip, Deli Days, Glow Up Week, Pet Pals Month, Harvest Market, Cozy Home Event, Cold and Flu Defense",promotions/promo-spring-garden-days.md | promotions/promo-fresh-friday.md | promotions/promo-winter-care.md | promotions/promo-holiday-bake-fest.md | promotions/promo-summer-sip.md | promotions/promo-deli-days.md | promotions/promo-glow-up-week.md | promotions/promo-pet-pals-month.md | promotions/promo-harvest-market.md | promotions/promo-cozy-home-event.md | promotions/promo-cold-and-flu-defense.md,"The promotions available at neighborhood stores are:
+
+- Spring Garden Days: 20% off in the Home & Garden department (dates: 2025-03-15 to 2025-04-15) [1]  
+- Deli Days: 10% off in the Deli department (dates: 2025-04-01 to 2025-04-30) [2]  
+- Fresh Friday: 10% off in the Grocery department (dates: 2025-01-03 to 2025-12-26) [3]  
+- Pet Pals Month: 12% off in the Pet Care department (dates: 2025-09-01 to 2025-09-30) [4]  
+- Summer Sip: 8% off in the Beverages department (dates: 2025-06-01 to 2025-08-31) [5]  
+- Cozy Home Event: 25% off in the Home & Garden department (dates","The promotions available at neighborhood stores are:
+
+- Deli Days: 10% off in the Deli department (2025-04-01 to 2025-04-30) [1]  
+- Winter Care: 12% off in the Pharmacy department (2025-12-01 to 2025-12-31) [2]  
+- Fresh Friday: 10% off in the Grocery department (2025-01-03 to 2025-12-26) [3]  
+- Harvest Market: 15% off in the Grocery department (2025-10-01 to 2025-10-31) [4]  
+- Summer Sip: 8% off in the Beverages department (2025-06-01 to 2025-08-31) [5]  
+- Glow Up Week: 30% off in the Beauty department (2025-02-10 to 2025-02-16) [6",y,n,n,"automatic T7 scoring, binarized"
+bm4-h-s3-17-t,S3,Which Great Plains stores are open today?,"Brightmart Prairie Rose, Brightmart Red River, Brightmart Black Hills, Brightmart Cottonwood, Brightmart Wheatfield, Brightmart Cimarron, Brightmart Badlands Gate, Brightmart Buffalo Ridge, Brightmart Flint Hills",regions/great-plains/store-s050-prairie-rose.md | regions/great-plains/store-s051-red-river.md | regions/great-plains/store-s053-black-hills.md | regions/great-plains/store-s055-cottonwood.md | regions/great-plains/store-s056-wheatfield.md | regions/great-plains/store-s057-cimarron.md | regions/great-plains/store-s058-badlands-gate.md | regions/great-plains/store-s059-buffalo-ridge.md | regions/great-plains/store-s060-flint-hills.md,"The Great Plains stores open today are:
+
+- Brightmart Buffalo Ridge [2]  
+- Brightmart Wheatfield [4]  
+- Brightmart Prairie Rose [8]  
+- Brightmart Flint Hills [9]  
+
+Brightmart Prairie Hub is permanently closed [3], and Brightmart Sooner Plaza is temporarily closed for remodeling [7]. All other stores listed in the documentation are either closed or not explicitly stated as open.  
+
+Answer: Brightmart Buffalo Ridge, Brightmart Wheatfield, Brightmart Prairie Rose, and Brightmart Flint Hills. [2][4][8][9]","All Great Plains stores are open today: Brightmart Buffalo Ridge, Brightmart Black Hills, Brightmart Flint Hills, Brightmart Red River, Brightmart Badlands Gate, Brightmart Wheatfield, Brightmart Cimarron, and Brightmart Prairie Rose. [2], [3], [4], [5], [6], [7], [8], [10]",y,n,n,"automatic T7 scoring, binarized"
+bm4-h-s3-18-t,S3,Which Northeast stores offer a pharmacy as well as fuel?,"Brightmart Riverdale, Brightmart Elm Terrace, Brightmart Kingsbury",regions/northeast/store-s002-riverdale.md | regions/northeast/store-s009-elm-terrace.md | regions/northeast/store-s012-kingsbury.md,"Brightmart Shore Point and Brightmart Liberty Square offer both a pharmacy and fuel. 
+
+- Brightmart Shore Point, located in Toms River, NJ, includes a full-service pharmacy and offers fuel services at the pumps [7].  
+- Brightmart Liberty Square, located in Allentown, PA, provides pharmacy services on-site and operates a fuel station [9].  
+
+Both stores are in the Northeast region [1].  
+
+Answer: Brightmart Shore Point and Brightmart Liberty Square. [7][9]","Brightmart Riverdale and Brightmart Kingsbury offer both a pharmacy and fuel services. 
+
+- Brightmart Riverdale, located in Albany, NY, has a pharmacy and fuel services available at the pumps [8]. 
+- Brightmart Kingsbury, located in Rochester, NY, includes a full-service pharmacy and customers can fill up at the fuel station [9]. 
+
+[8] and [9] support this answer.",y,n,n,"automatic T7 scoring, binarized"
+bm4-h-s3-21-t,S3,Which stores were established after 2021?,"Brightmart Granite Falls, Brightmart Kingsbury, Brightmart Coral Bay, Brightmart Riverbend, Brightmart Lakeshore, Brightmart Buckeye Commons, Brightmart Maple Grove, Brightmart Cimarron, Brightmart Buffalo Ridge, Brightmart Copper Creek, Brightmart Big Sky, Brightmart Sunset Cliffs, Brightmart Rogue Valley, Brightmart Harbor Lights",regions/northeast/store-s005-granite-falls.md | regions/northeast/store-s012-kingsbury.md | regions/southeast/store-s028-coral-bay.md | regions/southeast/store-s035-riverbend.md | regions/midwest/store-s038-lakeshore.md | regions/midwest/store-s041-buckeye-commons.md | regions/midwest/store-s044-maple-grove.md | regions/great-plains/store-s057-cimarron.md | regions/great-plains/store-s059-buffalo-ridge.md | regions/southwest/store-s070-copper-creek.md | regions/mountain/store-s077-big-sky.md | regions/pacific/store-s091-sunset-cliffs.md | regions/pacific/store-s093-rogue-valley.md | regions/pacific/store-s095-harbor-lights.md,NOT FOUND,"The stores established after 2021 are:
+
+- Brightmart Riverbend, established in 2022 [6]  
+- Brightmart Granite Falls, established in 2023 [8]  
+
+Answer: Brightmart Riverbend and Brightmart Granite Falls [6][8]",y,n,n,"automatic T7 scoring, binarized"
+bm4-h-s3-24-t,S3,Which stores were established before 2005?,"Brightmart Beacon Hill, Brightmart Maple Crossing, Brightmart Chestnut Grove, Brightmart Bayview, Brightmart Brandywine, Brightmart Pinehurst, Brightmart Smoky Hollow, Brightmart Harbor Springs, Brightmart Red River, Brightmart Black Hills, Brightmart Lone Star Plaza, Brightmart Rio Grande, Brightmart Painted Sky, Brightmart Sierra Vista, Brightmart Silver Peak, Brightmart Cascade View, Brightmart Redwood Crossing, Brightmart Bayshore, Brightmart Puget Landing, Brightmart Sierra Pines, Brightmart Orchard Hill",regions/northeast/store-s004-beacon-hill.md | regions/northeast/store-s006-maple-crossing.md | regions/mid-atlantic/store-s014-chestnut-grove.md | regions/mid-atlantic/store-s015-bayview.md | regions/mid-atlantic/store-s016-brandywine.md | regions/southeast/store-s027-pinehurst.md | regions/southeast/store-s032-smoky-hollow.md | regions/midwest/store-s042-harbor-springs.md | regions/great-plains/store-s051-red-river.md | regions/great-plains/store-s053-black-hills.md | regions/southwest/store-s064-lone-star-plaza.md | regions/southwest/store-s065-rio-grande.md | regions/southwest/store-s069-painted-sky.md | regions/southwest/store-s072-sierra-vista.md | regions/mountain/store-s079-silver-peak.md | regions/pacific/store-s086-cascade-view.md | regions/pacific/store-s087-redwood-crossing.md | regions/pacific/store-s088-bayshore.md | regions/pacific/store-s092-puget-landing.md | regions/pacific/store-s094-sierra-pines.md | regions/pacific/store-s096-orchard-hill.md,"Brightmart Bayshore (2003) and Brightmart Brandywine (1996) were established before 2005. [1] states that Brightmart Bayshore opened in 2003, and [5] states that Brightmart Brandywine opened in 1996. [6] states Brightmart Sierra Vista was established in 2002, which is also before 2005. Therefore, the stores established before 2005 are Brightmart Bayshore, Brightmart Brandywine, and Brightmart Sierra Vista. [1], [5], [6]  
+
+Answer: Brightmart Bayshore, Brightmart Brandywine, and Brightmart Sierra Vista. [1], [5], [6]","Brightmart Smoky Hollow was established in 2002 and Brightmart Azalea Park has been operating since 2008. Both were established before 2005. [8] [9]
+
+Answer: Brightmart Smoky Hollow, Brightmart Azalea Park. [8] [9]",y,n,n,"automatic T7 scoring, binarized"
+bm4-h-s3-31-t,S3,"Which stores are under 12,000 square feet?","Brightmart Azalea Park, Brightmart Willow Creek, Brightmart Sunflower Commons, Brightmart Painted Sky, Brightmart Glacier Point, Brightmart Redwood Crossing, Brightmart Sunset Cliffs",regions/southeast/store-s033-azalea-park.md | regions/midwest/store-s045-willow-creek.md | regions/great-plains/store-s054-sunflower-commons.md | regions/southwest/store-s069-painted-sky.md | regions/mountain/store-s083-glacier-point.md | regions/pacific/store-s087-redwood-crossing.md | regions/pacific/store-s091-sunset-cliffs.md,"The stores under 12,000 square feet are:
+
+- Brightmart Bayshore: 38,500 square feet [6] → exceeds 12,000  
+- Brightmart Lone Star Plaza: 44,500 square feet [7] → exceeds 12,000  
+
+All other stores listed in the documentation are supercenters with over 150,000 square feet (e.g., Elm Terrace: 157,500 sq ft, Wasatch Commons: 180,500 sq ft, Rainier Commons: 186,000 sq ft).  
+
+No store in the provided documentation has less than 12,000 square feet.  
+
+Therefore, there are no stores under 12,000 square feet.  
+
+Answer: NOT FOUND",NOT FOUND,y,n,n,"automatic T7 scoring, binarized"
+bm4-h-s4-05-t,S4,Which stores belong to the Mountain region or the Northeast region?,"Brightmart Riverside, Brightmart Riverdale, Brightmart Harbor Point, Brightmart Beacon Hill, Brightmart Granite Falls, Brightmart Maple Crossing, Brightmart Seaside Commons, Brightmart Stonebridge, Brightmart Elm Terrace, Brightmart Lighthouse Square, Brightmart Birch Meadow, Brightmart Kingsbury, Brightmart Cedar Park, Brightmart Summit Ridge, Brightmart Aspen Grove, Brightmart Wasatch Commons, Brightmart Big Sky, Brightmart Teton Plaza, Brightmart Silver Peak, Brightmart Pikes View, Brightmart Snake River, Brightmart Red Rock, Brightmart Glacier Point, Brightmart Elk Meadow",regions/northeast/store-s001-riverside.md | regions/northeast/store-s002-riverdale.md | regions/northeast/store-s003-harbor-point.md | regions/northeast/store-s004-beacon-hill.md | regions/northeast/store-s005-granite-falls.md | regions/northeast/store-s006-maple-crossing.md | regions/northeast/store-s007-seaside-commons.md | regions/northeast/store-s008-stonebridge.md | regions/northeast/store-s009-elm-terrace.md | regions/northeast/store-s010-lighthouse-square.md | regions/northeast/store-s011-birch-meadow.md | regions/northeast/store-s012-kingsbury.md | regions/mountain/store-s073-cedar-park.md | regions/mountain/store-s074-summit-ridge.md | regions/mountain/store-s075-aspen-grove.md | regions/mountain/store-s076-wasatch-commons.md | regions/mountain/store-s077-big-sky.md | regions/mountain/store-s078-teton-plaza.md | regions/mountain/store-s079-silver-peak.md | regions/mountain/store-s080-pikes-view.md | regions/mountain/store-s081-snake-river.md | regions/mountain/store-s082-red-rock.md | regions/mountain/store-s083-glacier-point.md | regions/mountain/store-s084-elk-meadow.md,"Stores belonging to the Mountain region:  
+- Brightmart Cedar Park  
+- Brightmart Summit Ridge  
+- Brightmart Aspen Grove  
+- Brightmart Wasatch Commons  
+- Brightmart Big Sky  
+- Brightmart Teton Plaza  
+- Brightmart Silver Peak  
+- Brightmart Pikes View  
+- Brightmart Snake River  
+- Brightmart Red Rock  
+- Brightmart Glacier Point  
+- Brightmart Elk Meadow  
+
+Stores belonging to the Northeast region:  
+- Brightmart Riverside  
+- Brightmart Riverdale  
+- Brightmart Harbor Point  
+- Brightmart Beacon Hill  
+- Brightmart Granite Falls  
+- Brightmart Maple Crossing  
+- Brightmart Seaside Commons  
+- Brightmart Stonebridge  
+- Brightmart Elm Terrace  
+- Brightmart Lighthouse Square  
+- Brightmart Birch Meadow  
+- Brightmart Kingsbury  
+
+[1] and [2]","Stores in the Mountain region:  
+- Brightmart Cedar Park  
+- Brightmart Summit Ridge  
+- Brightmart Aspen Grove  
+- Brightmart Wasatch Commons  
+- Brightmart Big Sky  
+- Brightmart Teton Plaza  
+- Brightmart Silver Peak  
+- Brightmart Pikes View  
+- Brightmart Snake River  
+- Brightmart Red Rock  
+- Brightmart Glacier Point  
+- Brightmart Elk Meadow [14]
+
+Stores in the Northeast region:  
+- Brightmart Riverside  
+- Brightmart Riverdale  
+- Brightmart Harbor Point  
+- Brightmart Beacon Hill  
+- Brightmart Granite Falls  
+- Brightmart Maple Crossing  
+- Brightmart Seaside Commons  
+- Brightmart Stonebridge  
+- Brightmart Elm Terrace  
+- Brightmart Lighthouse Square  
+- Brightmart Birch Meadow  
+- Brightmart Kingsbury [15]
+
+[14] [15]",y,y,y,"automatic T7 scoring, binarized"
+bm4-h-s4-15-t,S4,Which categories belong to the Bakery department or the Pet Care department?,"Artisan Bread, Pastries, Birthday Cakes, Bagels, Dog Food, Cat Litter, Pet Toys, Aquarium Supplies",departments/bakery/category-artisan-bread.md | departments/bakery/category-pastries.md | departments/bakery/category-birthday-cakes.md | departments/bakery/category-bagels.md | departments/pet-care/category-dog-food.md | departments/pet-care/category-cat-litter.md | departments/pet-care/category-pet-toys.md | departments/pet-care/category-aquarium-supplies.md,"The categories that belong to the Bakery department are:  
+- Pastries [3]  
+- Birthday Cakes [4]  
+- Bagels [5]  
+- Artisan Bread [9]  
+
+The categories that belong to the Pet Care department are:  
+- Dog Food [1]  
+- Pet Toys [2]  
+- Aquarium Supplies [8]  
+
+[1] Dog Food is part of the Pet Care department.  
+[2] Pet Toys is part of the Pet Care department.  
+[3] Pastries is part of the Bakery department.  
+[4] Birthday Cakes is part of the Bakery department.  
+[5] Bagels is part of the Bakery department.  
+[8] Aquarium Supplies is part of the Pet Care department.  
+[9] Artisan Bread is part of the Bakery department.","The categories that belong to the Pet Care department are:  
+- Pet Toys [1]  
+- Cat Litter [3]  
+- Dog Food [4]  
+- Aquarium Supplies [5]  
+
+The Bakery department is not explicitly linked to any specific category in the provided documentation. Therefore, no category is identified as belonging to the Bakery department based on the given information.  
+
+Answer: Pet Toys, Cat Litter, Dog Food, Aquarium Supplies belong to the Pet Care department. NOT FOUND for Bakery department.",y,n,n,"automatic T7 scoring, binarized"
+bm4-h-s4-17-t,S4,Which categories belong to the Grocery department or the Electronics department?,"Fresh Produce, Dairy, Canned Goods, Breakfast Cereal, Televisions, Phones, Headphones, Laptops",departments/grocery/category-fresh-produce.md | departments/grocery/category-dairy.md | departments/grocery/category-canned-goods.md | departments/grocery/category-breakfast-cereal.md | departments/electronics/category-televisions.md | departments/electronics/category-phones.md | departments/electronics/category-headphones.md | departments/electronics/category-laptops.md,"Categories belonging to the Grocery department:  
+- Dairy [4]  
+- Fresh Produce [6]  
+- Canned Goods [7]  
+
+Categories belonging to the Electronics department:  
+- Televisions [1]  
+- Phones [3]  
+- Headphones [8]  
+
+[1] ""This category is part of the Electronics department.""  
+[3] ""Phones is sourced from Kestrel Electronics. This category is part of the Electronics department.""  
+[8] ""Headphones This category is part of the Electronics department.""  
+[4] ""Dairy This category is part of the Grocery department.""  
+[6] ""Fresh Produce This category is part of the Grocery department.""  
+[7] ""Canned Goods This category is part of the Grocery department.""","The categories that belong to the Grocery department are: Dairy, Fresh Produce, Canned Goods, and Breakfast Cereal [19][10].  
+The categories that belong to the Electronics department are: Phones, Televisions, Headphones, and Laptops [14][2][7][8].  
+
+[10] Dairy This category is part of the Grocery department.  
+[19] Categories - Fresh Produce - Dairy - Canned Goods - Breakfast Cereal  
+[2] Phones This category is part of the Electronics department.  
+[7] Headphones This category is part of the Electronics department.  
+[8] Laptops This category is part of the Electronics department.  
+[14] Categories - Televisions - Phones - Headphones - Laptops",y,n,y,"automatic T7 scoring, binarized"
+bm4-h-s4-29-t,S4,Which stores in the Great Plains region were established after 2003?,"Brightmart Prairie Hub, Brightmart Prairie Rose, Brightmart Sooner Plaza, Brightmart Sunflower Commons, Brightmart Cottonwood, Brightmart Wheatfield, Brightmart Cimarron, Brightmart Badlands Gate, Brightmart Buffalo Ridge, Brightmart Flint Hills",regions/great-plains/store-s049-prairie-hub.md | regions/great-plains/store-s050-prairie-rose.md | regions/great-plains/store-s052-sooner-plaza.md | regions/great-plains/store-s054-sunflower-commons.md | regions/great-plains/store-s055-cottonwood.md | regions/great-plains/store-s056-wheatfield.md | regions/great-plains/store-s057-cimarron.md | regions/great-plains/store-s058-badlands-gate.md | regions/great-plains/store-s059-buffalo-ridge.md | regions/great-plains/store-s060-flint-hills.md,"Brightmart Prairie Hub (established in 2019) and Brightmart Buffalo Ridge (established in 2022) were established after 2003 in the Great Plains region [3][4]. All other stores listed in the Great Plains region were established before or in 2003 [7]. Therefore, the stores established after 2003 are:
+
+- Brightmart Prairie Hub  
+- Brightmart Buffalo Ridge  
+
+[3][4]","The stores in the Great Plains region established after 2003 are:
+
+- Brightmart Sunflower Commons (established in 2021) [4]  
+- Brightmart Buffalo Ridge (opened in 2022) [5]  
+- Brightmart Prairie Hub (established in 2019) [7]  
+- Brightmart Sooner Plaza (opened in 2020) [9]  
+- Brightmart Badlands Gate (established in 2017) [10]  
+- Brightmart Flint Hills (established in 2013) [8]  
+
+However, only those established *after 2003* are required. Among these, the stores established *after 2003* are:
+
+- Brightmart Sunflower Commons (2021) [4]  
+- Brightmart Buffalo Ridge (2022) [5]  
+- Brightmart Prairie Hub (2019) [7]  
+- Brightmart Sooner Plaza (2020) [9]  
+
+Brightmart Badlands Gate (2017) and Brightmart Flint Hills (2013) were also established after 200",y,n,n,"automatic T7 scoring, binarized"
+bm4-h-s4-30-t,S4,Which stores in the Mid-Atlantic region were established after 2012?,"Brightmart Blue Ridge, Brightmart Keystone Plaza, Brightmart Shore Point, Brightmart Tidewater, Brightmart Millbrook",regions/mid-atlantic/store-s017-blue-ridge.md | regions/mid-atlantic/store-s018-keystone-plaza.md | regions/mid-atlantic/store-s019-shore-point.md | regions/mid-atlantic/store-s023-tidewater.md | regions/mid-atlantic/store-s024-millbrook.md,"Brightmart Blue Ridge opened in 2020 [5]. All other stores listed in the Mid-Atlantic region were established before 2012, as indicated by the establishment dates provided in the documentation (e.g., Brightmart Bayview established in 2001 [9], Brightmart Liberty Square since 2005 [7]). Therefore, the only store in the Mid-Atlantic region established after 2012 is Brightmart Blue Ridge.
+
+Answer: Brightmart Blue Ridge [5]","The stores in the Mid-Atlantic region established after 2012 are:
+
+- Brightmart Blue Ridge (opened in 2020) [3]  
+- Brightmart Shore Point (opened in 2013) [4]  
+- Brightmart Tidewater (established in 2015) [5]  
+- Brightmart Keystone Plaza (since 2016) [8]  
+
+These stores were established after 2012 based on their opening years.  
+
+Answer: Brightmart Blue Ridge, Brightmart Shore Point, Brightmart Tidewater, Brightmart Keystone Plaza [3][4][5][8]",y,n,n,"automatic T7 scoring, binarized"
+bm4-h-s4-32-t,S4,Which stores in the Pacific region were established after 2009?,"Brightmart Evergreen, Brightmart Rainier Commons, Brightmart Willamette, Brightmart Sunset Cliffs, Brightmart Rogue Valley, Brightmart Harbor Lights",regions/pacific/store-s085-evergreen.md | regions/pacific/store-s089-rainier-commons.md | regions/pacific/store-s090-willamette.md | regions/pacific/store-s091-sunset-cliffs.md | regions/pacific/store-s093-rogue-valley.md | regions/pacific/store-s095-harbor-lights.md,"Brightmart Harbor Lights was established in 2024 [7]. All other stores in the Pacific region listed in the documentation were established before 2009, as no establishment date is provided for them beyond the initial list in [1], and only Harbor Lights has a specific date. Therefore, the only store in the Pacific region established after 2009 is:
+
+Brightmart Harbor Lights [7].","The stores in the Pacific region established after 2009 are:
+
+- Brightmart Sunset Cliffs, established in 2023 [4]
+- Brightmart Willamette, opened in 2021 [5]
+- Brightmart Evergreen, opened in 2016 [6]
+
+These are the only stores in the Pacific region with establishment dates after 2009. [4], [5], [6]",y,n,n,"automatic T7 scoring, binarized"
+bm4-h-s4-33-t,S4,Which express stores belong to the Mountain region or the Southwest region?,"Brightmart Desert Bloom, Brightmart Canyon Ridge, Brightmart Painted Sky, Brightmart Pikes View, Brightmart Snake River, Brightmart Glacier Point",regions/southwest/store-s061-desert-bloom.md | regions/southwest/store-s066-canyon-ridge.md | regions/southwest/store-s069-painted-sky.md | regions/mountain/store-s080-pikes-view.md | regions/mountain/store-s081-snake-river.md | regions/mountain/store-s083-glacier-point.md,"The express stores that belong to the Mountain region or the Southwest region are:
+
+**Mountain Region:**  
+- Brightmart Glacier Point (express format, though closed and no longer in operation) [6]  
+- Brightmart Summit Ridge (operating, neighborhood format, includes pharmacy) [9]  
+
+**Southwest Region:**  
+- Brightmart Desert Bloom  
+- Brightmart Mesa Verde  
+- Brightmart Saguaro Point  
+- Brightmart Lone Star Plaza  
+- Brightmart Rio Grande  
+- Brightmart Canyon Ridge  
+- Brightmart Adobe Springs  
+- Brightmart Bluebonnet  
+- Brightmart Painted Sky  
+- Brightmart Copper Creek  
+- Brightmart Pecos Crossing  
+- Brightmart Sierra Vista  
+
+Note: Brightmart Glacier Point is explicitly labeled as an express format store in [6], and Brightmart Summit Ridge is in the Mountain region with no indication of express format, though it is a full-format neighborhood store. The Southwest region stores listed are all standard store names without express designation, but the question asks which express stores belong to these regions. Since only Brightmart Glacier Point is explicitly described as an express store, and it is in the Mountain region, the only express store in either region is:
+
+**Answer: Brightmart Glacier Point** [6","The express stores that belong to the Mountain region are:  
+- Brightmart Glacier Point (Missoula, MT) [1]  
+- Brightmart Snake River (Idaho Falls, ID) [4]  
+- Brightmart Pikes View (Colorado Springs, CO) [5]  
+
+The express stores that belong to the Southwest region are:  
+- Brightmart Desert Bloom (Tucson, AZ) [2]  
+- Brightmart Canyon Ridge (Flagstaff, AZ) [3]  
+- Brightmart Painted Sky (Las Cruces, NM) [6]  
+
+[1], [4], [5], [2], [3], [6]",y,n,y,"automatic T7 scoring, binarized"
+bm4-h-s4-38-t,S4,Which stores in the Southwest region are something other than supercenters?,"Brightmart Desert Bloom, Brightmart Mesa Verde, Brightmart Saguaro Point, Brightmart Lone Star Plaza, Brightmart Canyon Ridge, Brightmart Bluebonnet, Brightmart Painted Sky, Brightmart Copper Creek",regions/southwest/store-s061-desert-bloom.md | regions/southwest/store-s062-mesa-verde.md | regions/southwest/store-s063-saguaro-point.md | regions/southwest/store-s064-lone-star-plaza.md | regions/southwest/store-s066-canyon-ridge.md | regions/southwest/store-s068-bluebonnet.md | regions/southwest/store-s069-painted-sky.md | regions/southwest/store-s070-copper-creek.md,"Brightmart Saguaro Point is a store in the Southwest region that is something other than a supercenter. It is described as a neighborhood store offering a curated selection of products and does not have a fuel station, indicating it is not a supercenter [4]. 
+
+Answer: Brightmart Saguaro Point [4]","The stores in the Southwest region that are something other than supercenters are:
+
+- Brightmart Desert Bloom (express format) [5]  
+- Brightmart Canyon Ridge (express format) [6]  
+- Brightmart Painted Sky (express format) [7]  
+- Brightmart Bluebonnet (neighborhood format) [8]  
+- Brightmart Mesa Verde (neighborhood format) [9]  
+- Brightmart Saguaro Point (neighborhood format) [10]  
+
+These stores are explicitly described as operating in formats other than supercenter, such as express or neighborhood. [5], [6], [7], [8], [9], [10]",y,n,n,"automatic T7 scoring, binarized"
+bm4-h-s5-03-t,S5,In what year did the Brightmart store in Milwaukee open?,(unanswerable),,NOT FOUND,NOT FOUND,y,y,y,"automatic T7 scoring, binarized"
+bm4-h-s5-11-t,S5,When does the Labor Day Deals promotion run?,(unanswerable),,"The Labor Day Deals promotion is not mentioned in the provided documentation. Therefore, the answer is NOT FOUND.",NOT FOUND,y,y,y,"automatic T7 scoring, binarized"
+bm4-h-s5-18-t,S5,Can you tell me the holiday opening hours of Brightmart Kingsbury?,(unanswerable),,NOT FOUND,NOT FOUND,y,y,y,"automatic T7 scoring, binarized"
+bm4-h-s5-26-t,S5,Which stores belong to the Appalachia region?,(unanswerable),,NOT FOUND,NOT FOUND,y,y,y,"automatic T7 scoring, binarized"
+bm4-h-s5-27-t,S5,Which stores belong to the Rust Belt region?,(unanswerable),,NOT FOUND,NOT FOUND,y,y,y,"automatic T7 scoring, binarized"
+bm4-h-s5-28-t,S5,Which stores belong to the Tri-State region?,(unanswerable),,NOT FOUND,NOT FOUND,y,y,y,"automatic T7 scoring, binarized"
+bm4-h-s5-29-t,S5,Which stores belong to the Heartland region?,(unanswerable),,"The stores that belong to the Heartland region are not listed in the provided documentation. The documentation mentions regions such as Midwest, Southeast, Mid-Atlantic, Great Plains, Northeast, Mountain, Pacific, and Southwest, but there is no explicit mention of a ""Heartland region"" or its stores. Therefore, the answer is NOT FOUND.",NOT FOUND,y,y,y,"automatic T7 scoring, binarized"
+bm4-h-s5-36-t,S5,Which categories does Oakridge Hardware supply?,(unanswerable),,NOT FOUND,NOT FOUND,y,y,y,"automatic T7 scoring, binarized"

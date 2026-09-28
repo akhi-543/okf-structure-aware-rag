@@ -1,0 +1,16 @@
+bundle,arm,queries,index_build_s,embedding_s,dense_index_bytes,bm25_postings,latency_p50_ms,latency_p95_ms,index_llm_tokens
+synthetic_retail_v4,R0,400,0.0013,130.85,1179648,0,0.301,0.375,0
+synthetic_retail_v4,R1h,400,0.0031,108.26,3081216,0,0.634,0.774,0
+synthetic_retail_v4,R2s,400,0.0188,0.00,0,9716,1.275,1.946,0
+synthetic_retail_v4,R3s,400,0.0199,0.00,0,9716,3.871,4.410,0
+synthetic_retail_v4,R3x,400,0.0199,0.00,0,9716,4.236,4.918,968467
+synthetic_retail_v4,R5p,400,0.0199,0.00,0,9716,2.613,3.183,0
+synthetic_retail_v4,R6f,400,0.0203,0.00,0,9716,0.541,1.124,0
+synthetic_retail_v4,R6l,400,0.0188,0.00,0,9716,0.218,0.385,0
+synthetic_retail_v4,R7f,400,0.0188,130.85,1179648,9716,0.121,0.148,0
+synthetic_retail_v4,R7h,400,0.0199,293.80,4260864,9716,4.711,5.477,0
+synthetic_retail_v4_noparent,R0,400,0.0009,127.11,1179648,0,0.312,0.391,0
+synthetic_retail_v4_noparent,R2s,400,0.0228,0.00,0,9656,1.287,1.891,0
+synthetic_retail_v4_noparent,R3s,400,0.0251,0.00,0,9656,3.648,4.165,0
+synthetic_retail_v4_noparent,R5p,400,0.0251,0.00,0,9656,2.616,3.208,0
+synthetic_retail_v4_noparent,R6f,400,0.0265,0.00,0,9656,0.372,0.854,0

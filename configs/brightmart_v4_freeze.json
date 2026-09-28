@@ -1,0 +1,12 @@
+{
+  "frozen_on": "2026-09-27",
+  "corpus_sha256": {
+    "standard": "83559da251fae6930ba7ac965aa034b436ab6c580871fd49cf42e4389b8cc2ac",
+    "noparent": "9781aa0a6725f413b09b8cb66233916a0473771ef5641e9aa4c4636d6eb058a9"
+  },
+  "heldout_files": {
+    "doc_synthetic/brightmart_v4_heldout_questions.jsonl": "fa09caa3c4f6928923fe03eb503aa1569818b9dd7d741bcc2d60080d1e1f649c",
+    "doc_synthetic/brightmart_v4_heldout_qrels.jsonl": "da988f487c964bf88de884f44c4602092875fe2957babe911e5749c99034c841",
+    "doc_synthetic/brightmart_v4_heldout_gold_spans.jsonl": "63b06efaebd6fa2be968c72518e3b65e0aadbaa146278bfb84cde05e1939c6fd"
+  }
+}

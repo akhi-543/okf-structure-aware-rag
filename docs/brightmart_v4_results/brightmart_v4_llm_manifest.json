@@ -1,0 +1,47 @@
+{
+  "extract": {
+    "role": "graph_extraction",
+    "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "dtype": "torch.float16",
+    "cuda": true,
+    "override": false,
+    "docs": 348,
+    "edges": 3101,
+    "parse_ok": 348,
+    "unknown_titles": 16,
+    "prompt_tokens": 948702,
+    "completion_tokens": 19765,
+    "seconds": 1983.9,
+    "batch_size": 4,
+    "corpus": "results/corpus_v4"
+  },
+  "filters_dev": {
+    "role": "query_filter",
+    "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "dtype": "torch.float16",
+    "cuda": true,
+    "override": false,
+    "questions": 400,
+    "with_filters": 266,
+    "prompt_tokens": 198090,
+    "completion_tokens": 14209,
+    "seconds": 361.0,
+    "batch_size": 16
+  },
+  "filters_heldout": {
+    "role": "query_filter",
+    "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "dtype": "torch.float16",
+    "cuda": true,
+    "override": false,
+    "questions": 400,
+    "with_filters": 296,
+    "prompt_tokens": 198028,
+    "completion_tokens": 14888,
+    "seconds": 360.5,
+    "batch_size": 16
+  }
+}

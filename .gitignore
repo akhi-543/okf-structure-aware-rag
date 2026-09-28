@@ -1,0 +1,21 @@
+# Generated run outputs (recreate with the pipeline)
+results/
+
+# Local environments and tool state
+.venv/
+venv/
+.env
+**/__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.superpowers/
+
+# Report and slide working folders (kept locally, not in the repository)
+documentation/
+presentaion/
+.pptx-validation/
+
+# Editor lock and temp files
+~$*
+*.tmp
