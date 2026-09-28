@@ -142,7 +142,8 @@ Results: `docs/brightmart_v4_results.md`.
 ## Deviation D1 — T8 reviewed by one human reviewer (2026-09-28)
 
 The preregistered 20% sample (40 held-out templates, 80 generated answers) was reviewed by one
-human reviewer, the project author, instead of two independent reviewers. The review found no
+human reviewer, the project author, working from a sheet pre-filled by a model reviewer, instead of
+two independent reviewers. The review found no
 errors in the gold data or the answer judgements and agreed with the automatic T7 scoring on all
 80 judgements. With a single reviewer, Cohen's kappa between reviewers could not be computed, so
 the two-reviewer part of the T8 criterion is not met.

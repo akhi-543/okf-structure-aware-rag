@@ -20,7 +20,7 @@ including rankings, answers, extracted edges and the T8 sheets, are unpacked loc
 | **T5** contextual chunks, link expansion | Is each variant's S3+S4 CI lower bound above 0? | R3s **kept** (+0.253 [+0.167, +0.338]); R1h **not kept** (−0.019 [−0.081, +0.041]) |
 | **T6** extracted vs authored links | Authored − extracted, same expansion (R3s vs R3x) | No difference: S3+S4 −0.001 [−0.018, +0.017]; S1–S4 +0.001 [−0.008, +0.011]. Extraction cost 968,467 LLM tokens (1,984 s on 2x T4) |
 | **T7** answer quality | Are structure-aware answers more correct **and** more often faithful on S3+S4, with S5 abstention not lower? | **FAIL** — correctness improves (answer F1 +0.146 [+0.074, +0.219]) but faithfulness does not (HHEM −0.100 [−0.212, +0.013]; MiniCheck −0.100 [−0.237, +0.037]); S5 abstention 0.900 vs 0.875 |
-| **T8** human review | Cohen's κ ≥ 0.7 between two reviewers | **Completed by human review** — the project author found no errors in the 40 sampled gold items or the 80 answer judgements, and the automatic T7 scoring agreed with the review on all 80 (κ = 1.0). One reviewer instead of two (deviation D1) |
+| **T8** human review | Cohen's κ ≥ 0.7 between two reviewers | **Completed by human review, no errors found; one reviewer (deviation D1)** — the project author checked the 40 sampled templates and 80 answers from a model pre-filled sheet: 120 of 120 judgements confirmed, κ = 1.0 against the automatic T7 scoring |
 | **T9** efficiency | Cost table | Reported below |
 | T10 real corpora | — | Not part of this iteration |
 
@@ -112,7 +112,7 @@ obvious next test (it has to be preregistered and run on a new held-out set).
 ## T8 human review
 
 The project author reviewed the preregistered 20% sample (8 held-out templates per stratum, both
-answers each) against rules fixed before judging: *gold_ok* — the gold answer and documents answer
+answers each), working from a sheet pre-filled by a model reviewer, against rules fixed before judging: *gold_ok* — the gold answer and documents answer
 the question as worded; *correct* — S1/S2 state the gold fact (the group, not only the department,
 for group questions), S3/S4 name every gold entity and no wrong one, S5 decline.
 

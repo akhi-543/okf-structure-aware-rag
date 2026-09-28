@@ -667,7 +667,7 @@ flowchart LR
 
 ### Use case explanation
 
-The experimenter controls benchmark construction, validation, ingest, retrieval runs, and automated evaluation. The reviewer assesses a stratified sample of questions, gold, and generated answers; in this study the project author reviewed the sample. A web bench user can submit one question to the flat and structured lanes, compare the retrieved evidence and generated answers, and browse document chunks and authored links. The web bench serves the pilot corpus (`synthetic_retail_pilot`, 53 documents); its structured lane uses the same R2s ranking as the v4 study.
+The experimenter controls benchmark construction, validation, ingest, retrieval runs, and automated evaluation. The reviewer assesses a stratified sample of questions, gold, and generated answers; in this study the project author reviewed the sample, working from a sheet pre-filled by a model reviewer. A web bench user can submit one question to the flat and structured lanes, compare the retrieved evidence and generated answers, and browse document chunks and authored links. The web bench serves the pilot corpus (`synthetic_retail_pilot`, 53 documents); its structured lane uses the same R2s ranking as the v4 study.
 
 ## Activity Diagram
 
@@ -823,7 +823,7 @@ T7 compares R0 and R2s using identical answer generation conditions. R0 contribu
 
 ### Human review
 
-The protocol calls for two reviewers to examine a 20 percent stratified held out sample, eight template items from each stratum, independently. They assess the question, gold evidence, generated answers, correctness, support, and abstention, and Cohen's kappa measures agreement for each judgement column. A discovered gold error requires a versioned correction and rerun. In this study the sample was reviewed by the project author, who checked the gold evidence and every generated answer and found no errors. With a single reviewer, Cohen's kappa between reviewers was not computed (deviation D1 in the Deviations section).
+The protocol calls for two reviewers to examine a 20 percent stratified held out sample, eight template items from each stratum, independently. They assess the question, gold evidence, generated answers, correctness, support, and abstention, and Cohen's kappa measures agreement for each judgement column. A discovered gold error requires a versioned correction and rerun. In this study the project author reviewed the sample against the fixed rules, working from a sheet pre-filled by a model reviewer, and found no errors in the gold data or in the automatic scoring. With a single reviewer, Cohen's kappa between reviewers was not computed (deviation D1 in the Deviations section).
 
 ### Efficiency evaluation
 
@@ -858,7 +858,7 @@ All results in this section come from the single confirmatory run on the frozen 
 | T5 Contextual chunks and link expansion | Is each variant's S3 and S4 lower bound above zero? | R3s **kept**, +0.253 [+0.167, +0.338]; R1h **not kept**, −0.019 [−0.081, +0.041] |
 | T6 Authored and extracted structure | Authored minus extracted edges under the same expansion | No difference: −0.001 [−0.018, +0.017] on S3 and S4, +0.001 [−0.008, +0.011] on S1 to S4 |
 | T7 Answer quality | More correct and more often faithful on S3 and S4, with S5 abstention not lower? | **Fail.** Answer F1 +0.146 [+0.074, +0.219], but faithfulness −0.100 [−0.212, +0.013] |
-| T8 Human review | Cohen's kappa of at least 0.7 between two reviewers | **Completed by human review.** The project author found no errors in the 40 gold items or the 80 answer judgements; the automatic scoring agreed with the review on all 80 judgements. One reviewer instead of two (deviation D1) |
+| T8 Human review | Cohen's kappa of at least 0.7 between two reviewers | **Completed by human review, no errors found; one reviewer (deviation D1).** The project author checked the 40 gold items and 80 answer judgements (120 of 120) from a model pre-filled sheet; kappa 1.0 against the automatic scoring |
 | T9 Efficiency | Cost of every configuration | Reported in the efficiency table |
 
 The main comparison family on S3 and S4 templates (n = 80) gives, against R0: R2s +0.291, R3s +0.253, R5p +0.400, R6f +0.722, R7f +0.283, and R7h +0.167, all Holm significant, and R1h −0.019, not significant.
@@ -909,7 +909,7 @@ Qwen3-4B-Instruct-2507 extracted 3,101 edges from the 348 standard corpus pages,
 
 ### Review of the stratified sample (T8)
 
-The project author reviewed the 40 sampled held out templates and their 80 answers against fixed rules: S1 and S2 answers must state the gold fact, and the group rather than only the department for group questions; S3 and S4 answers must name every gold entity and no wrong one; S5 answers must decline. All 40 gold answers were confirmed correct, and no errors were found in the answer judgements. Answers were correct for R0 and R2s respectively on S1 8 and 6 of 8, S2 4 and 5, S3 0 and 0, S4 1 and 3, and S5 8 and 8. The automatic T7 scoring, with S3 and S4 counted as correct only for an exact answer set, agreed with the human review on all 80 judgements (kappa 1.0 for each column).
+The project author reviewed all 40 sampled held out templates and their 80 answers against fixed rules, working from a sheet pre-filled by a model reviewer: S1 and S2 answers must state the gold fact, and the group rather than only the department for group questions; S3 and S4 answers must name every gold entity and no wrong one; S5 answers must decline. The review found no errors in the gold data or in the automatic scoring (120 of 120 judgements). Answers were correct for R0 and R2s respectively on S1 8 and 6 of 8, S2 4 and 5, S3 0 and 0, S4 1 and 3, and S5 8 and 8. The automatic T7 scoring, with S3 and S4 counted as correct only for an exact answer set, agreed with the human review on all 80 judgements (kappa 1.0 for each column).
 
 ### Efficiency (T9)
 
@@ -950,7 +950,7 @@ The preregistration ([`docs/brightmart_v4_prereg.md`](docs/brightmart_v4_prereg.
 
 1. **Amendment 1, development set changes before the held out run.** R3s initially summed each seed's boost, so hub pages collected boosts from every seed; it now takes the best single seed's boost, with λ = 0.25 chosen on the development set by the same objective as the fusion constant. The rule based parser was extended on development misses, and a question that names every value of a field is treated as a choice rather than a filter. The fusion constant k = 30 was frozen. BM25 was made independent of the Python hash seed, and HHEM is loaded without its remote code.
 2. **Amendment 2, after the held out run, operational only.** MiniCheck ran out of GPU memory on two T4 GPUs, so the first T7 report contained HHEM only. MiniCheck was rerun on an A10G GPU with memory headroom, its memory efficient SDPA attention path, and last position logits, on the recorded answers and HHEM scores. The T7 verdict, which uses HHEM, is unchanged.
-3. **Deviation D1, T8.** The review was carried out by one human reviewer, the project author, instead of two independent reviewers, so Cohen's kappa between reviewers could not be computed. The author found no errors in the gold data or the answer judgements, and the review agreed with the automatic scoring on all 80 judgements.
+3. **Deviation D1, T8.** The review was carried out by one human reviewer, the project author, working from a sheet pre-filled by a model reviewer, instead of two independent reviewers, so Cohen's kappa between reviewers could not be computed. The author found no errors in the gold data or in the automatic scoring (120 of 120 judgements; kappa 1.0 against the automatic scoring).
 
 ## Significance of the Proposed Work
 
@@ -982,7 +982,7 @@ The project also provides a reproducible test bed for future work on real docume
 6. R5p and R7h rely partly on title matching, while R6f uses domain specific parsing rules. Aliases, implicit references, and unfamiliar phrasing can require broader entity resolution and query interpretation.
 7. The extracted graph and optional language model filter controls depend on one pinned model and GPU resources.
 8. Answer evaluation depends on fixed generators, judges, top evidence selection, and a 2,048 token context budget; with 256 new tokens, long set answers can be cut off.
-9. The stratified 20 percent sample was reviewed by one human reviewer, the project author, rather than two, so inter reviewer agreement is not measured (deviation D1).
+9. The stratified 20 percent sample was reviewed by one human reviewer, the project author, working from a model pre-filled sheet, rather than by two independent reviewers, so inter reviewer agreement is not measured (deviation D1).
 10. Efficiency measures do not quantify the human effort required to author and maintain document structure.
 11. Ranking metadata alone costs about 0.2 nDCG@10 on direct facts; a deployed system needs dense evidence as well, as in R7h.
 12. Structure aware contexts deliver document text without the metadata that selected the documents, which limits how verifiable the generated answers are (T7).
